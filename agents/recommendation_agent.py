@@ -11,8 +11,10 @@ load_dotenv()
 class RecommendationAgent():
     def __init__(self,apriori_recommendation_path,popular_recommendation_path):
         
+        print("paths",os.listdir("../"))
         with open(apriori_recommendation_path, 'r') as file:
-            print("path",apriori_recommendation_path)
+            # print("path",apriori_recommendation_path)
+            0
             self.apriori_recommendations = json.load(file)
 
         self.popular_recommendations = pd.read_csv(popular_recommendation_path)

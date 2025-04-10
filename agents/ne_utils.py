@@ -48,10 +48,11 @@ def n_get_embedding(model,tokenizer,text_input):
 
     inputs = tokenizer(text_input, return_tensors="pt")
     inputs.to("cuda")
+
     print("creating embedding")
 
     with torch.no_grad():
-        outputs = model.generate(**inputs, return_dict_in_generate=True, output_hidden_states=True,max_length = 100)
+        outputs = model.generate(**inputs, return_dict_in_generate=True, output_hidden_states=True,max_length = 10)
 
     hidden_states = outputs.hidden_states
     last_hidden_state = hidden_states[-1]
@@ -80,6 +81,6 @@ def ne_double_check_json_output(model,tokenizer,json_string):
     messages = [{"role": "user", "content": prompt}]
 
     response = n_get_chatbot_response(model,tokenizer,messages)
-    print("\ndouble check res",response)
+    # print("\ndouble check res",response)
 
     return response

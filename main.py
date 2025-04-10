@@ -4,7 +4,7 @@ from agents import (GuardAgent,
                     OrderTakingAgent,
                     RecommendationAgent,
                     AgentProtocol,
-                    load_model,
+                    
                     ne_load_model
                     )
 import os
@@ -14,8 +14,8 @@ def main():
     
     guard_agent = GuardAgent()
     classification_agent = ClassificationAgent()
-    recommendation_agent = RecommendationAgent('C:/Users/ASUS/Desktop/pro/AI chatbbot/api/recommendation_objects/apriori_recommendations.json',
-                                                    'C:/Users/ASUS/Desktop/pro/AI chatbbot/api/recommendation_objects/popularity_recommendation.csv'
+    recommendation_agent = RecommendationAgent('CoffeeChatbot/recommendation_files/apriori_recommendations.json',
+                                                    'CoffeeChatbot/recommendation_files/popularity_recommendation.csv'
                                                     )
     agent_dict: dict[str, AgentProtocol] = {
         "details_agent": DetailsAgent(),
